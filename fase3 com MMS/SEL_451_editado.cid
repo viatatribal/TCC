@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns:esel="http://www.selinc.com/2006/61850" version="2007" revision="B" xmlns="http://www.iec.ch/61850/2003/SCL">
+	<Header id="New Project" version="0" revision="1.0" toolID="AcSELerator Architect 2.3.8.1743" nameStructure="IEDName">
+		<History>
+			<Hitem version="0" revision="1.0" when="09/29/2022 12:00:26" who="DESKTOP-UQ3VEVV\Dell" what="IED exported from Project New Project"/>
+		</History>
+	</Header>
+	<Communication>
+		<SubNetwork name="Subnet1" type="8-MMS/TCP">
+			<Text/>
+			<BitRate unit="b/s" multiplier="M">100</BitRate>
+			<ConnectedAP iedName="SEL_451" apName="S1">
+				<Address>
+					<P type="OSI-TSEL">0001</P>
+					<P type="OSI-PSEL">00000001</P>
+					<P type="OSI-SSEL">0001</P>
+				</Address>
+				<GSE ldInst="CFG" cbName="PUSHBOTTOM">
+					<Address>
+						<P type="MAC-Address">01-0C-CD-01-00-06</P>
+						<P type="APPID">0003</P>
+						<P type="VLAN-PRIORITY">4</P>
+						<P type="VLAN-ID">000</P>
+					</Address>
+					<MinTime unit="s" multiplier="m">4</MinTime>
+					<MaxTime unit="s" multiplier="m">1000</MaxTime>
+				</GSE>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED xmlns="http://www.iec.ch/61850/2003/SCL" desc="Shorten prefix/instance length. Less than 8 characters." name="SEL_451" type="SEL_451" manufacturer="SEL" configVersion="ICD-451-R102-V0-Z119002-D20141104">
+		<Private type="SEL_IedInfo">
+			<esel:ModelNumber xmlns:esel="http://www.selinc.com/2006/61850">SEL-451-2</esel:ModelNumber>
+			<esel:ClassFileVersion xmlns:esel="http://www.selinc.com/2006/61850">002</esel:ClassFileVersion>
+			<esel:ClassFileDescription xmlns:esel="http://www.selinc.com/2006/61850" default="false">451-2 8 Pushbuttons</esel:ClassFileDescription>
+			<esel:IcdFilePath xmlns:esel="http://www.selinc.com/2006/61850">C:\Users\Dell\AppData\Local\SEL\AcSELerator\Architect\Palette\SEL_451.cid</esel:IcdFilePath>
+			<esel:CidSentTime xmlns:esel="http://www.selinc.com/2006/61850">09/29/2022 11:47:30</esel:CidSentTime>
+		</Private>
+		<Private type="SEL_HostFile">
+			<esel:host_file xmlns:esel="http://www.selinc.com/2006/61850" path="SETTINGS\" filename="SET_LCC.TXT">
+				<![CDATA[[LCC]
+PROTSEL1,"CSV01 := DSTRT OR NSTRT"
+PROTSEL2,""
+PROTSEL3,""
+PROTSEL4,""
+PROTSEL5,""
+PROTSEL6,""
+PROTSEL7,""
+PROTSEL8,""
+PROTSEL9,""
+PROTSEL10,""
+PROTSEL11,""
+PROTSEL12,""
+PROTSEL13,""
+PROTSEL14,""
+PROTSEL15,""
+PROTSEL16,""
+PROTSEL17,""
+PROTSEL18,""
+PROTSEL19,""
+PROTSEL20,""
+PROTSEL21,""
+PROTSEL22,""
+PROTSEL23,""
+PROTSEL24,""
+PROTSEL25,""
+PROTSEL26,""
+PROTSEL27,""
+PROTSEL28,""
+PROTSEL29,""
+PROTSEL30,""
+PROTSEL31,""
+PROTSEL32,""]]>
+			</esel:host_file>
+		</Private>
+		<Private type="SEL_HostFile">
+			<esel:host_file xmlns:esel="http://www.selinc.com/2006/61850" path="SETTINGS\" filename="SET_RCC.TXT">
+				<![CDATA[[RCC]
+SITM257,TRIP
+SITM258,52ACL1
+SITM259,52AAL1
+SITM260,52AA1
+SITM261,52ACL2
+SITM262,52AAL2
+SITM263,52AA2
+SITM264,IN101
+SITM265,IN102
+SITM266,IN103
+SITM267,IN104
+SITM268,IN105
+SITM269,IN106
+SITM270,IN107
+SITM271,PSV01
+SITM272,PSV02
+SITM273,PSV03
+SITM274,PSV04
+SITM275,PSV05
+SITM276,PSV06
+SITM277,PSV07
+SITM278,PSV08
+SITM279,PLT01
+SITM280,PLT02
+SITM281,PLT03
+SITM282,PLT04
+SITM283,PLT05
+SITM284,PLT06
+SITM285,PLT07
+SITM286,PLT08
+SITM287,RB01
+SITM288,RB02
+SITM289,RB03
+SITM290,RB04
+SITM291,RB05
+SITM292,RB06
+SITM293,RB07
+SITM294,RB08
+SITM295,RB09
+SITM296,RB10
+SITM297,RB11
+SITM298,RB12
+SITM299,RB13
+SITM300,RB14
+SITM301,RB15
+SITM302,RB16
+SITM303,RMB1A
+SITM304,RMB2A
+SITM305,RMB3A
+SITM306,RMB4A
+SITM307,RMB5A
+SITM308,RMB6A
+SITM309,RMB7A
+SITM310,RMB8A
+SITM311,RMB1B
+SITM312,RMB2B
+SITM313,RMB3B
+SITM314,RMB4B
+SITM315,RMB5B
+SITM316,RMB6B
+SITM317,RMB7B
+SITM318,RMB8B
+SITM319,CCIN001
+SITM320,CCIN002
+SITM321,CCIN003
+SITM322,CCIN004
+SITM323,CCIN005
+SITM324,CCIN006
+SITM325,CCIN007
+SITM326,CCIN008
+SITM327,CCIN009
+SITM328,CCIN010
+SITM329,CCIN011
+SITM330,CCIN012
+SITM331,CCIN013
+SITM332,CCIN014
+SITM333,CCIN015
+SITM334,CCIN016
+SITM335,ASV001
+SITM336,ASV002
+SITM337,ASV003
+SITM338,ASV004
+SITM339,ASV005
+SITM340,ASV006
+SITM341,ASV007
+SITM342,ASV008
+SITM343,ALT01
+SITM344,ALT02
+SITM345,ALT03
+SITM346,ALT04
+SITM347,ALT05
+SITM348,ALT06
+SITM349,ALT07
+SITM350,ALT08
+SITM351,
+SITM352,
+SITM353,
+SITM354,
+SITM355,
+SITM356,
+SITM357,
+SITM358,
+SITM359,
+SITM360,
+SITM361,
+SITM362,
+SITM363,
+SITM364,
+SITM365,
+SITM366,
+SITM367,
+SITM368,
+SITM369,
+SITM370,
+SITM371,
+SITM372,
+SITM373,
+SITM374,
+SITM375,
+SITM376,
+SITM377,
+SITM378,
+SITM379,
+SITM380,
+SITM381,
+SITM382,
+SITM383,
+SITM384,]]>
+			</esel:host_file>
+		</Private>
+		<Private type="SEL_IedResources">
+			<esel:InDigitals xmlns:esel="http://www.selinc.com/2006/61850">
+				<esel:InBits format="CCIN{0:D3}" min="1" max="128"/>
+			</esel:InDigitals>
+			<esel:GooseRx xmlns:esel="http://www.selinc.com/2006/61850" max="24"/>
+			<esel:Reports xmlns:esel="http://www.selinc.com/2006/61850" maxDataSetSize="8000"/>
+			<esel:System xmlns:esel="http://www.selinc.com/2006/61850" maxEntries="2255"/>
+			<esel:System xmlns:esel="http://www.selinc.com/2006/61850" maxMappedItems="4000"/>
+		</Private>
+		<Private type="SEL_OriginatorAccess">
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="0" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="1" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="2" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="3" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="4" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="5" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="6" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="7" allowed="1"/>
+			<esel:Originator xmlns:esel="http://www.selinc.com/2006/61850" category="8" allowed="1"/>
+		</Private>
+		<Private type="SEL_GooseSubscription"/>
+		<Private type="SEL_IedComm">
+			<esel:FtpAddress xmlns:esel="http://www.selinc.com/2006/61850">192.168.0.51</esel:FtpAddress>
+			<esel:FtpPassword xmlns:esel="http://www.selinc.com/2006/61850">64.32.6380004962622985598A3B585CCJAIqjGCB1G5c3nOj9ILrGA==11845ce20a2a736476f9591dc10e926e4a3</esel:FtpPassword>
+			<esel:FtpUsername xmlns:esel="http://www.selinc.com/2006/61850">2AC</esel:FtpUsername>
+		</Private>
+		<Services>
+			<DynAssociation/>
+			<GetDirectory/>
+			<GetDataObjectDefinition/>
+			<DataObjectDirectory/>
+			<GetDataSetValue/>
+			<SetDataSetValue/>
+			<DataSetDirectory/>
+			<ConfDataSet max="22" maxAttributes="500"/>
+			<ReadWrite/>
+			<ConfReportControl max="12"/>
+			<GetCBValues/>
+			<ReportSettings cbName="Conf" datSet="Conf" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn"/>
+			<GSESettings cbName="Conf" datSet="Conf" appID="Conf"/>
+			<GOOSE max="8"/>
+			<ConfLNs/>
+		</Services>
+		<AccessPoint name="S1">
+			<Server>
+				<Authentication/>
+				<LDevice xmlns="http://www.iec.ch/61850/2003/SCL" desc="Data Sets, BRCBs, URCBs" inst="CFG">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="t">
+								<esel:Val>-480</esel:Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="d">
+								<Val>Configuration</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ldNs">
+								<Val>IEC61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN xmlns="http://www.iec.ch/61850/2003/SCL" lnType="LPHD1" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:SER_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="serNum"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:PART_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="model"/>
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice xmlns="http://www.iec.ch/61850/2003/SCL" desc="Protection" inst="PRO">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DataSet name="Protection50" desc="Protection50">
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="1" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="1" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="4" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="4" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="7" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="7" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="1" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="1" doName="FltA" daName="phsA.t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="4" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="4" doName="FltA" daName="phsA.t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="7" doName="FltA" daName="phsA.t"/>
+						</DataSet>
+						<DataSet name="Protection51OP" desc="Protection51OP">
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="1" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="1" doName="FltA" daName="phsA.t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="4" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="4" doName="FltA" daName="phsA.t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.t"/>
+						</DataSet>
+						<ReportControl name="Protection50RCB" confRev="1" datSet="Protection50" rptID="Protection50" buffered="true" intgPd="5000" bufTime="5000">
+							<TrgOps dchg="true" dupd="true"/>
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
+							<RptEnabled max="1"/>
+						</ReportControl>
+						<ReportControl name="Protection51OP" confRev="1" datSet="Protection51OP" rptID="Protection51OP" buffered="true" intgPd="5000" bufTime="5000">
+							<TrgOps dchg="true" dupd="true"/>
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
+							<RptEnabled max="1"/>
+						</ReportControl>
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="d">
+								<Val>Protection</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ldNs">
+								<Val>IEC61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN xmlns="http://www.iec.ch/61850/2003/SCL" lnType="LPHD1" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:SER_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="serNum"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:PART_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="model"/>
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+					</LN>
+					<LN xmlns="http://www.iec.ch/61850/2003/SCL" lnType="PIOC1" lnClass="PIOC" inst="1">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P1" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P1" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PIOC1" lnClass="PIOC" inst="4">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P2" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P2" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PIOC1" lnClass="PIOC" inst="7">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P3" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:50P3" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="1">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P1" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P1T" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="4">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P2" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P2T" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="7">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P3" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="dirGeneral">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI esel:datasrc="db:1:TARGET:TARGET:67P3T" xmlns:esel="http://www.selinc.com/2006/61850" name="general"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice xmlns="http://www.iec.ch/61850/2003/SCL" desc="Metering" inst="MET">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DataSet name="Measurements" desc="Measurements">
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsA.t"/>
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsB.instCVal.mag.f"/>
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsB.t"/>
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsC.instCVal.mag.f"/>
+							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsC.t"/>
+						</DataSet>
+						<ReportControl name="Measurements" confRev="1" datSet="Measurements" rptID="Measurements" buffered="true" intgPd="5000" bufTime="5000">
+							<TrgOps qchg="true" dchg="true" period="true" gi="true" dupd="true"/>
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true"/>
+							<RptEnabled max="1"/>
+						</ReportControl>
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="d">
+								<Val>Metering</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ldNs">
+								<Val>IEC61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN xmlns="http://www.iec.ch/61850/2003/SCL" lnType="LPHD1" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:SER_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="serNum"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:PART_NUM" xmlns:esel="http://www.selinc.com/2006/61850" name="model"/>
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal">
+								<Val>0</Val>
+							</DAI>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+					</LN>
+					<LN xmlns="http://www.iec.ch/61850/2003/SCL" lnType="MMXU1" lnClass="MMXU" inst="1">
+						<DOI name="Mod">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="ctlModel">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?3:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
+							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="vendor">
+								<Val>SEL</Val>
+							</DAI>
+							<DAI esel:datasrc="dbi:1:LOCAL:FID" xmlns:esel="http://www.selinc.com/2006/61850" name="swRev"/>
+							<DAI esel:datasrc="dbi:1:LOCAL:DEVICE_ID" xmlns:esel="http://www.selinc.com/2006/61850" name="d"/>
+						</DOI>
+						<DOI name="A1">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IA1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IA1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IB1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IB1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI esel:datasrc="db:1:METER:IC1[0]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI esel:datasrc="db:1:METER:IC1[1]" xmlns:esel="http://www.selinc.com/2006/61850" name="f"/>
+									</SDI>
+								</SDI>
+								<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
+								<SDI name="units">
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="unit">
+										<Val>5</Val>
+									</DAI>
+									<DAI esel:datasrc="imm" xmlns:esel="http://www.selinc.com/2006/61850" name="multiplier">
+										<Val>0</Val>
+									</DAI>
+								</SDI>
+								<DAI esel:datasrc="imm:10000" xmlns:esel="http://www.selinc.com/2006/61850" name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="LN0" lnClass="LLN0">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_1"/>
+		</LNodeType>
+		<LNodeType id="LPHD1" lnClass="LPHD">
+			<DO name="PhyNam" type="DPL_0"/>
+			<DO name="PhyHealth" type="INS_0"/>
+			<DO name="Proxy" type="SPS_0"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="PIOC1" lnClass="PIOC">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="Str" type="ACD_0"/>
+			<DO name="Op" type="ACT_0"/>
+			<DO name="StrVal" type="ASG"/>
+			<DO name="FltA" type="WYE_2"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="PTOC1" lnClass="PTOC">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="Str" type="ACD_0"/>
+			<DO name="Op" type="ACT_0"/>
+			<DO name="StrVal" type="ASG"/>
+			<DO name="FltA" type="WYE_2"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="MMXU1" lnClass="MMXU">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="A1" type="WYE_2"/>
+		</LNodeType>
+		<DOType cdc="ASG" id="ASG">
+			<DA bType="Struct" fc="SP" name="setMag" type="AnalogValue_0"/>
+		</DOType>
+		<DOType id="modINC" cdc="INC">
+			<DA name="stVal" bType="Enum" type="Mod" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="behINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="Beh" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="healthINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="Health" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="LPL_1" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+			<DA name="configRev" bType="VisString255" fc="DC"/>
+			<DA name="ldNs" bType="VisString255" fc="EX"/>
+		</DOType>
+		<DOType id="DPL_0" cdc="DPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="serNum" bType="VisString255" fc="DC"/>
+			<DA name="model" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DOType id="INS_0" cdc="INS">
+			<DA name="stVal" bType="INT32" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="SPS_0" cdc="SPS">
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="LPL_0" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DOType id="ACT_0" cdc="ACT">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="ACD_0" cdc="ACD">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="dirGeneral" bType="Enum" type="dirGeneral" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="ACT_1" cdc="ACT">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsA" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsB" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsC" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="DPC_0" cdc="DPC">
+			<DA name="stVal" bType="Dbpos" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="SPC_1" cdc="SPC">
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="CBOpCapINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="CBOpCap" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="DPC_1" cdc="DPC">
+			<DA name="Oper" bType="Struct" type="Oper_0" fc="CO"/>
+			<DA name="stVal" bType="Dbpos" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="analogMV" cdc="MV">
+			<DA name="instMag" bType="Struct" type="AnalogValue_0" fc="MX"/>
+			<DA name="mag" bType="Struct" type="AnalogValue_0" dchg="true" fc="MX"/>
+			<DA name="units" bType="Struct" type="Units_0" fc="CF"/>
+			<DA name="q" bType="Quality" qchg="true" fc="MX"/>
+			<DA name="t" bType="Timestamp" fc="MX"/>
+			<DA name="db" bType="INT32U" fc="CF"/>
+		</DOType>
+		<DOType id="WYE_2" cdc="WYE">
+			<SDO name="phsA" type="CMV_0"/>
+			<SDO name="phsB" type="CMV_0"/>
+			<SDO name="phsC" type="CMV_0"/>
+		</DOType>
+		<DOType id="CMV_0" cdc="CMV">
+			<DA name="instCVal" bType="Struct" type="Vector_0" fc="MX"/>
+			<DA name="cVal" bType="Struct" type="Vector_0" dchg="true" fc="MX"/>
+			<DA name="units" bType="Struct" type="Units_0" fc="CF"/>
+			<DA name="q" bType="Quality" qchg="true" fc="MX"/>
+			<DA name="t" bType="Timestamp" fc="MX"/>
+			<DA name="db" bType="INT32U" fc="CF"/>
+		</DOType>
+		<DOType id="SEQ_0" cdc="SEQ">
+			<SDO name="c1" type="CMV_0"/>
+			<SDO name="c2" type="CMV_0"/>
+			<SDO name="c3" type="CMV_0"/>
+			<DA name="seqT" bType="Enum" type="seqT" fc="MX"/>
+		</DOType>
+		<DOType id="SPC_0" cdc="SPC">
+			<DA name="Oper" bType="Struct" type="Oper_0" fc="CO"/>
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DAType id="Oper_0">
+			<BDA name="ctlVal" bType="BOOLEAN"/>
+			<BDA name="origin" bType="Struct" type="Originator_0"/>
+			<BDA name="ctlNum" bType="INT8U"/>
+			<BDA name="T" bType="Timestamp"/>
+			<BDA name="Test" bType="BOOLEAN"/>
+			<BDA name="Check" bType="Check"/>
+		</DAType>
+		<DAType id="Originator_0">
+			<BDA name="orCat" bType="Enum" type="orCat"/>
+			<BDA name="orIdent" bType="Octet64"/>
+		</DAType>
+		<DAType id="AnalogValue_0">
+			<BDA name="f" bType="FLOAT32"/>
+		</DAType>
+		<DAType id="Units_0">
+			<BDA name="unit" bType="Enum" type="SIUnit"/>
+			<BDA name="multiplier" bType="Enum" type="multiplier"/>
+		</DAType>
+		<DAType id="Vector_0">
+			<BDA name="mag" bType="Struct" type="AnalogValue_0"/>
+			<BDA name="ang" bType="Struct" type="AnalogValue_0"/>
+		</DAType>
+		<EnumType id="Mod">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="ctlModel">
+			<EnumVal ord="0">status-only</EnumVal>
+			<EnumVal ord="1">direct-with-normal-security</EnumVal>
+			<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+			<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+			<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+		</EnumType>
+		<EnumType id="Beh">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="Health">
+			<EnumVal ord="1">Ok</EnumVal>
+			<EnumVal ord="2">Warning</EnumVal>
+			<EnumVal ord="3">Alarm</EnumVal>
+		</EnumType>
+		<EnumType id="dirGeneral">
+			<EnumVal ord="0">unknown</EnumVal>
+			<EnumVal ord="1">forward</EnumVal>
+			<EnumVal ord="2">backward</EnumVal>
+			<EnumVal ord="3">both</EnumVal>
+		</EnumType>
+		<EnumType id="CBOpCap">
+			<EnumVal ord="1">None</EnumVal>
+			<EnumVal ord="2">Open</EnumVal>
+			<EnumVal ord="3">Close</EnumVal>
+			<EnumVal ord="4">Close-Open</EnumVal>
+			<EnumVal ord="5">Open-Close-Open</EnumVal>
+			<EnumVal ord="6">Close-Open-Close-Open</EnumVal>
+		</EnumType>
+		<EnumType id="orCat">
+			<EnumVal ord="0">not-supported</EnumVal>
+			<EnumVal ord="1">bay-control</EnumVal>
+			<EnumVal ord="2">station-control</EnumVal>
+			<EnumVal ord="3">remote-control</EnumVal>
+			<EnumVal ord="4">automatic-bay</EnumVal>
+			<EnumVal ord="5">automatic-station</EnumVal>
+			<EnumVal ord="6">automatic-remote</EnumVal>
+			<EnumVal ord="7">maintenance</EnumVal>
+			<EnumVal ord="8">process</EnumVal>
+		</EnumType>
+		<EnumType id="SIUnit">
+			<EnumVal ord="1">none</EnumVal>
+			<EnumVal ord="2">m</EnumVal>
+			<EnumVal ord="3">kg</EnumVal>
+			<EnumVal ord="4">s</EnumVal>
+			<EnumVal ord="5">A</EnumVal>
+			<EnumVal ord="6">K</EnumVal>
+			<EnumVal ord="7">mol</EnumVal>
+			<EnumVal ord="8">cd</EnumVal>
+			<EnumVal ord="9">deg</EnumVal>
+			<EnumVal ord="10">rad</EnumVal>
+			<EnumVal ord="11">sr</EnumVal>
+			<EnumVal ord="21">Gy</EnumVal>
+			<EnumVal ord="22">q</EnumVal>
+			<EnumVal ord="23">°C</EnumVal>
+			<EnumVal ord="24">Sv</EnumVal>
+			<EnumVal ord="25">F</EnumVal>
+			<EnumVal ord="26">C</EnumVal>
+			<EnumVal ord="27">S</EnumVal>
+			<EnumVal ord="28">H</EnumVal>
+			<EnumVal ord="29">V</EnumVal>
+			<EnumVal ord="30">ohm</EnumVal>
+			<EnumVal ord="31">J</EnumVal>
+			<EnumVal ord="32">N</EnumVal>
+			<EnumVal ord="33">Hz</EnumVal>
+			<EnumVal ord="34">lx</EnumVal>
+			<EnumVal ord="35">Lm</EnumVal>
+			<EnumVal ord="36">Wb</EnumVal>
+			<EnumVal ord="37">T</EnumVal>
+			<EnumVal ord="38">W</EnumVal>
+			<EnumVal ord="39">Pa</EnumVal>
+			<EnumVal ord="41">m²</EnumVal>
+			<EnumVal ord="42">m³</EnumVal>
+			<EnumVal ord="43">m/s</EnumVal>
+			<EnumVal ord="44">m/s²</EnumVal>
+			<EnumVal ord="45">m³/s</EnumVal>
+			<EnumVal ord="46">m/m³</EnumVal>
+			<EnumVal ord="47">M</EnumVal>
+			<EnumVal ord="48">kg/m³</EnumVal>
+			<EnumVal ord="49">m²/s</EnumVal>
+			<EnumVal ord="50">W/m K</EnumVal>
+			<EnumVal ord="51">J/K</EnumVal>
+			<EnumVal ord="52">ppm</EnumVal>
+			<EnumVal ord="53">1/s</EnumVal>
+			<EnumVal ord="54">rad/s</EnumVal>
+			<EnumVal ord="61">VA</EnumVal>
+			<EnumVal ord="62">Watts</EnumVal>
+			<EnumVal ord="63">VAr</EnumVal>
+			<EnumVal ord="64">theta</EnumVal>
+			<EnumVal ord="65">Cos (theta)</EnumVal>
+			<EnumVal ord="66">Vs</EnumVal>
+			<EnumVal ord="67">V²</EnumVal>
+			<EnumVal ord="68">As</EnumVal>
+			<EnumVal ord="69">A²</EnumVal>
+			<EnumVal ord="70">A²t</EnumVal>
+			<EnumVal ord="71">VAh</EnumVal>
+			<EnumVal ord="72">Wh</EnumVal>
+			<EnumVal ord="73">VArh</EnumVal>
+			<EnumVal ord="74">V/Hz</EnumVal>
+		</EnumType>
+		<EnumType id="multiplier">
+			<EnumVal ord="-24">y</EnumVal>
+			<EnumVal ord="-21">z</EnumVal>
+			<EnumVal ord="-18">a</EnumVal>
+			<EnumVal ord="-15">f</EnumVal>
+			<EnumVal ord="-12">p</EnumVal>
+			<EnumVal ord="-9">n</EnumVal>
+			<EnumVal ord="-6">µ</EnumVal>
+			<EnumVal ord="-3">m</EnumVal>
+			<EnumVal ord="-2">c</EnumVal>
+			<EnumVal ord="-1">d</EnumVal>
+			<EnumVal ord="0"/>
+			<EnumVal ord="1">da</EnumVal>
+			<EnumVal ord="2">h</EnumVal>
+			<EnumVal ord="3">k</EnumVal>
+			<EnumVal ord="6">M</EnumVal>
+			<EnumVal ord="9">G</EnumVal>
+			<EnumVal ord="12">T</EnumVal>
+			<EnumVal ord="15">P</EnumVal>
+			<EnumVal ord="18">E</EnumVal>
+			<EnumVal ord="21">Z</EnumVal>
+			<EnumVal ord="24">Y</EnumVal>
+		</EnumType>
+		<EnumType id="seqT">
+			<EnumVal ord="0">pos-neg-zero</EnumVal>
+			<EnumVal ord="1">dir-quad-zero</EnumVal>
+		</EnumType>
+	</DataTypeTemplates>
+</SCL>

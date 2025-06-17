@@ -1,0 +1,5 @@
+Opening device /dev/spidev1.1
+Teste de Dropout:
+03:55:48.154593791 1.003861 A Proteção Sobrecorrente Temporizada Fase A Pickup
+03:55:49.285425208 0.202578 A Proteção Sobrecorrente Temporizada Fase A Dropout 
+Tempo total do teste: 25.00 s

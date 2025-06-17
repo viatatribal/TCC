@@ -1,0 +1,13 @@
+Opening device /dev/spidev1.1
+Teste do trip:
+
+22:31:01.540860223 2.298350 A Proteção Sobrecorrente Temporizada Fase A Pickup
+22:31:04.642118644 2.304064 A Proteção Sobrecorrente Temporizada Fase A Operada 
+
+22:31:11.540760193 3.446175 A Proteção Sobrecorrente Temporizada Fase B Pickup
+22:31:13.674943688 3.520724 A Proteção Sobrecorrente Temporizada Fase B Operada 
+
+22:31:21.540841347 4.621740 A Proteção Sobrecorrente Temporizada Fase C Pickup
+22:31:23.308173252 4.636153 A Proteção Sobrecorrente Temporizada Fase C Operada 
+
+Tempo total do teste: 40.00 s
