@@ -1043,19 +1043,6 @@ SITM384,]]>
 				</LDevice>
 				<LDevice xmlns="http://www.iec.ch/61850/2003/SCL" desc="Metering" inst="MET">
 					<LN0 lnType="LN0" lnClass="LLN0" inst="">
-						<DataSet name="Measurements" desc="Measurements">
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsA.instCVal.mag.f"/>
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsA.t"/>
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsB.instCVal.mag.f"/>
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsB.t"/>
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsC.instCVal.mag.f"/>
-							<FCDA ldInst="MET" lnClass="MMXU" fc="MX" lnInst="1" doName="A1" daName="phsC.t"/>
-						</DataSet>
-						<ReportControl name="Measurements" confRev="1" datSet="Measurements" rptID="Measurements" buffered="true" intgPd="5000" bufTime="5000">
-							<TrgOps qchg="true" dchg="true" period="true" gi="true" dupd="true"/>
-							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" entryID="true" configRef="true"/>
-							<RptEnabled max="1"/>
-						</ReportControl>
 						<DOI name="Mod">
 							<DAI esel:datasrc="db:1:GLOBAL:HOSTOK?5:1" xmlns:esel="http://www.selinc.com/2006/61850" name="stVal"/>
 							<DAI esel:datasrc="db:1:GLOBAL:QUALITY" xmlns:esel="http://www.selinc.com/2006/61850" name="q"/>
