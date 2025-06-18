@@ -324,7 +324,7 @@ SITM384,]]>
 							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>
 							<FCDA ldInst="PRO" lnClass="PIOC" fc="SP" lnInst="7" doName="FltA" daName="phsA.t"/>
 						</DataSet>
-						<DataSet name="Protection51OP" desc="Protection51OP">
+						<DataSet name="Protection51" desc="Protection51OP">
 							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="general"/>
 							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="t"/>
 							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Op" daName="general"/>
@@ -344,12 +344,12 @@ SITM384,]]>
 							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>
 							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.t"/>
 						</DataSet>
-						<ReportControl name="Protection50RCB" confRev="1" datSet="Protection50" rptID="Protection50" buffered="true" intgPd="5000" bufTime="5000">
+						<ReportControl name="Protection50" confRev="1" datSet="Protection50" rptID="Protection50" buffered="true" intgPd="5000" bufTime="5000">
 							<TrgOps dchg="true" dupd="true"/>
 							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
 							<RptEnabled max="1"/>
 						</ReportControl>
-						<ReportControl name="Protection51OP" confRev="1" datSet="Protection51OP" rptID="Protection51OP" buffered="true" intgPd="5000" bufTime="5000">
+						<ReportControl name="Protection51" confRev="1" datSet="Protection51" rptID="Protection51OP" buffered="true" intgPd="5000" bufTime="5000">
 							<TrgOps dchg="true" dupd="true"/>
 							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
 							<RptEnabled max="1"/>
