@@ -1,0 +1,14 @@
+Opening device /dev/spidev1.1
+Using libIEC61850 version 1.5.1
+Teste do trip:
+
+22:29:03.599036608 2.109329 A Proteção Sobrecorrente Temporizada Fase A Pickup
+22:29:03.582364641 2.143018 A Proteção Sobrecorrente Temporizada Fase A Operada 
+
+22:28:45.929337642 3.216795 A Proteção Sobrecorrente Temporizada Fase B Pickup
+22:28:48.230291678 3.211776 A Proteção Sobrecorrente Temporizada Fase B Operada 
+
+22:28:55.929224829 4.289237 A Proteção Sobrecorrente Temporizada Fase C Pickup
+22:28:57.796677409 4.278708 A Proteção Sobrecorrente Temporizada Fase C Operada 
+
+Tempo total do teste: 40.00 s

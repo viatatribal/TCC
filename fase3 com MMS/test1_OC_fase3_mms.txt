@@ -1,0 +1,14 @@
+Opening device /dev/spidev1.1
+Using libIEC61850 version 1.5.1
+Teste de Dropout:
+
+21:37:38.218382231 1.069006 A Proteção Sobrecorrente Temporizada Fase A Pickup
+21:37:46.218555604 0.214486 A Proteção Sobrecorrente Temporizada Fase A Dropout 
+
+21:37:56.218444872 1.055271 A Proteção Sobrecorrente Temporizada Fase B Pickup
+21:38:04.218424336 0.212034 A Proteção Sobrecorrente Temporizada Fase B Dropout 
+
+21:38:14.218372782 1.049419 A Proteção Sobrecorrente Temporizada Fase C Pickup
+21:38:22.218363426 0.211188 A Proteção Sobrecorrente Temporizada Fase C Dropout 
+
+Tempo total do teste: 60.00 s
