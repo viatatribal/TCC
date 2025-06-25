@@ -1,0 +1,1267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL">
+	<Header id="New Project" nameStructure="IEDName">
+	</Header>
+	<Communication>
+		<SubNetwork name="Subnet1" type="8-MMS">
+			<Text/>
+			<BitRate unit="b/s" multiplier="M">1000</BitRate>
+			<ConnectedAP iedName="IEDUFF" apName="accessPoint1">
+				<Address>
+					<P type="IP">0.0.0.0</P>
+					<P type="IP-SUBNET">255.255.255.0</P>
+					<P type="IP-GATEWAY">192.168.2.1</P>
+					<P type="OSI-AP-Title">1,3,9999,33</P>
+					<P type="OSI-AE-Qualifier">33</P>
+					<P type="OSI-PSEL">00000001</P>
+					<P type="OSI-SSEL">0001</P>
+					<P type="OSI-TSEL">0001</P>
+					<P type="MMS-Port">102</P>
+				</Address>
+			</ConnectedAP>
+			<ConnectedAP iedName="remoteClient" apName="accessPoint1">
+				<Address>
+					<P type="IP">192.168.0.9</P>
+					<P type="IP-SUBNET">255.255.255.0</P>
+					<P type="IP-GATEWAY">192.168.0.1</P>
+					<P type="OSI-AP-Title">1,3,9999,33</P>
+					<P type="OSI-AE-Qualifier">33</P>
+					<P type="OSI-PSEL">00000001</P>
+					<P type="OSI-SSEL">0001</P>
+					<P type="OSI-TSEL">0001</P>
+					<P type="MMS-Port">102</P>
+				</Address>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED xmlns="http://www.iec.ch/61850/2003/SCL" desc="IED desenvolvido na UFF" name="IEDUFF" type="OCPROT" manufacturer="UFF" configVersion="DMFR_8891_2025_1v1">
+		<Services>
+			<DynAssociation/>
+			<GetDirectory/>
+			<GetDataObjectDefinition/>
+			<DataObjectDirectory/>
+			<GetDataSetValue/>
+			<SetDataSetValue/>
+			<DataSetDirectory/>
+			<ConfDataSet max="22" maxAttributes="500"/>
+			<ReadWrite/>
+			<ConfReportControl max="12"/>
+			<GetCBValues/>
+			<GSESettings cbName="Dyn" datSet="Dyn" appID="Dyn" dataLabel="Dyn"/>
+			<ConfLNs fixPrefix="true" fixLnInst="true"/>
+			<ReportSettings cbName="Dyn" datSet="Dyn" rptID="Dyn" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn"/>
+			<LogSettings cbName="Dyn" datSet="Dyn" logEna="Dyn" trgOps="Dyn" intgPd="Dyn"/>
+			<GOOSE max="5"/>
+			<GSSE max="5"/>
+			<FileHandling/>
+			<GSEDir/>
+			<TimerActivatedControl/>
+		</Services>
+		<AccessPoint name="accessPoint1">
+			<Server>
+				<Authentication/>
+				<LDevice xmlns="http://www.iec.ch/61850/2003/SCL" desc="Protection" inst="PRO">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DataSet name="Protection50" desc="Protection50">
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="1" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="1" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="4" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="4" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="7" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="ST" lnInst="7" doName="Op" daName="general"/>				
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="MX" lnInst="1" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="MX" lnInst="4" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PIOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>	
+						</DataSet>
+						<DataSet name="Protection51" desc="Protection51OP">
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Op" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Op" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="1" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="4" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Str" daName="t"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="ST" lnInst="7" doName="Str" daName="general"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="1" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="4" doName="FltA" daName="phsA.instCVal.mag.f"/>
+							<FCDA ldInst="PRO" lnClass="PTOC" fc="MX" lnInst="7" doName="FltA" daName="phsA.instCVal.mag.f"/>	
+						</DataSet>
+						<ReportControl name="Protection50" confRev="1" datSet="Protection50" rptID="Protection50" buffered="true" intgPd="5000" bufTime="5000">
+							<TrgOps dchg="true" dupd="true"/>
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
+							<RptEnabled max="1"/>
+						</ReportControl>
+						<ReportControl name="Protection51" confRev="1" datSet="Protection51" rptID="Protection51OP" buffered="true" intgPd="5000" bufTime="5000">
+							<TrgOps dchg="true" dupd="true"/>
+							<OptFields seqNum="true" timeStamp="true" dataSet="true" reasonCode="true" configRef="true"/>
+							<RptEnabled max="1"/>
+						</ReportControl>
+						<DOI name="Mod">
+							<DAI name="stVal">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal">
+								<Val>on</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal">
+								<Val>Ok</Val>
+							</DAI>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev">
+								<Val>1.0</Val>
+							</DAI>
+							<DAI name="d">
+								<Val>OC IED using libiec61850 server example</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="LPHD1" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="serNum"/>
+							<DAI name="model"/>
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI name="stVal">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+					</LN>
+					<LN lnType="PIOC1" lnClass="PIOC" inst="1">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PIOC1" lnClass="PIOC" inst="4">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PIOC1" lnClass="PIOC" inst="7">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="1">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="4">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="PTOC1" lnClass="PTOC" inst="7">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general"/>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="StrVal">
+							<DAI name="setMag"/>
+						</DOI>
+						<DOI name="FltA">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice desc="Metering" inst="MET">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d">
+								<Val>Metering</Val>
+							</DAI>
+							<DAI name="configRev">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="ldNs">
+								<Val>IEC61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+					</LN0>
+					<LN lnType="LPHD1" lnClass="LPHD" inst="1">
+						<DOI name="PhyNam">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="serNum"/>
+							<DAI name="model"/>
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI name="stVal">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q"/>
+						</DOI>
+					</LN>
+					<LN lnType="MMXU1" lnClass="MMXU" inst="1">
+						<DOI name="Mod">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+							<DAI name="ctlModel">
+								<Val>status-only</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal"/>
+							<DAI name="q"/>
+						</DOI>
+						<DOI name="NamPlt">
+							<DAI name="vendor">
+								<Val>UFF</Val>
+							</DAI>
+							<DAI name="swRev"/>
+							<DAI name="d"/>
+						</DOI>
+						<DOI name="A1">
+							<SDI name="phsA">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsB">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+							<SDI name="phsC">
+								<SDI name="instCVal">
+									<SDI name="mag">
+										<DAI name="f"/>
+									</SDI>
+									<SDI name="ang">
+										<DAI name="f"/>
+									</SDI>
+								</SDI>
+								<DAI name="q"/>
+								<SDI name="units">
+									<DAI name="unit">
+										<Val>A</Val>
+									</DAI>
+									<DAI name="multiplier">
+										<Val/>
+									</DAI>
+								</SDI>
+								<DAI name="db">
+									<Val>100</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="LN0" lnClass="LLN0">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_1"/>
+		</LNodeType>
+		<LNodeType id="LPHD1" lnClass="LPHD">
+			<DO name="PhyNam" type="DPL_0"/>
+			<DO name="PhyHealth" type="INS_0"/>
+			<DO name="Proxy" type="SPS_0"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="PIOC1" lnClass="PIOC">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="Str" type="ACD_0"/>
+			<DO name="Op" type="ACT_0"/>
+			<DO name="StrVal" type="ASG"/>
+			<DO name="FltA" type="WYE_2"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="PTOC1" lnClass="PTOC">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="Str" type="ACD_0"/>
+			<DO name="Op" type="ACT_0"/>
+			<DO name="StrVal" type="ASG"/>
+			<DO name="FltA" type="WYE_2"/>
+		</LNodeType>
+		<LNodeType xmlns="http://www.iec.ch/61850/2003/SCL" id="MMXU1" lnClass="MMXU">
+			<DO name="Mod" type="modINC"/>
+			<DO name="Beh" type="behINS"/>
+			<DO name="Health" type="healthINS"/>
+			<DO name="NamPlt" type="LPL_0"/>
+			<DO name="A1" type="WYE_2"/>
+		</LNodeType>
+		<DOType cdc="ASG" id="ASG">
+			<DA bType="Struct" fc="SP" name="setMag" dchg="true" type="AnalogValue_0"/>
+		</DOType>
+		<DOType id="modINC" cdc="INC">
+			<DA name="stVal" bType="Enum" type="Mod" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="behINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="Beh" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="healthINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="Health" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="LPL_1" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+			<DA name="configRev" bType="VisString255" fc="DC"/>
+			<DA name="ldNs" bType="VisString255" fc="EX"/>
+		</DOType>
+		<DOType id="DPL_0" cdc="DPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="serNum" bType="VisString255" fc="DC"/>
+			<DA name="model" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DOType id="INS_0" cdc="INS">
+			<DA name="stVal" bType="INT32" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="SPS_0" cdc="SPS">
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="LPL_0" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DOType id="ACT_0" cdc="ACT">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" dchg="true" fc="ST"/>
+		</DOType>
+		<DOType id="ACD_0" cdc="ACD">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="dirGeneral" bType="Enum" type="dirGeneral" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" dchg="true" fc="ST"/>
+		</DOType>
+		<DOType id="ACT_1" cdc="ACT">
+			<DA name="general" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsA" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsB" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="phsC" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="DPC_0" cdc="DPC">
+			<DA name="stVal" bType="Dbpos" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="SPC_1" cdc="SPC">
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="CBOpCapINS" cdc="INS">
+			<DA name="stVal" bType="Enum" type="CBOpCap" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+		</DOType>
+		<DOType id="DPC_1" cdc="DPC">
+			<DA name="Oper" bType="Struct" type="Oper_0" fc="CO"/>
+			<DA name="stVal" bType="Dbpos" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DOType id="analogMV" cdc="MV">
+			<DA name="instMag" bType="Struct" type="AnalogValue_0" fc="MX"/>
+			<DA name="mag" bType="Struct" type="AnalogValue_0" dchg="true" fc="MX"/>
+			<DA name="units" bType="Struct" type="Units_0" fc="CF"/>
+			<DA name="q" bType="Quality" qchg="true" fc="MX"/>
+			<DA name="t" bType="Timestamp" fc="MX"/>
+			<DA name="db" bType="INT32U" fc="CF"/>
+		</DOType>
+		<DOType id="WYE_2" cdc="WYE">
+			<SDO name="phsA" type="CMV_0"/>
+			<SDO name="phsB" type="CMV_0"/>
+			<SDO name="phsC" type="CMV_0"/>
+		</DOType>
+		<DOType id="CMV_0" cdc="CMV">
+			<DA name="instCVal" bType="Struct" type="Vector_0" dchg="true" fc="MX"/>
+			<DA name="cVal" bType="Struct" type="Vector_0" dchg="true" fc="MX"/>
+			<DA name="units" bType="Struct" type="Units_0" fc="CF"/>
+			<DA name="q" bType="Quality" qchg="true" fc="MX"/>
+			<DA name="t" bType="Timestamp" dchg="true" fc="MX"/>
+			<DA name="db" bType="INT32U" fc="CF"/>
+		</DOType>
+		<DOType id="SEQ_0" cdc="SEQ">
+			<SDO name="c1" type="CMV_0"/>
+			<SDO name="c2" type="CMV_0"/>
+			<SDO name="c3" type="CMV_0"/>
+			<DA name="seqT" bType="Enum" type="seqT" fc="MX"/>
+		</DOType>
+		<DOType id="SPC_0" cdc="SPC">
+			<DA name="Oper" bType="Struct" type="Oper_0" dchg="true" fc="CO"/>
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST"/>
+			<DA name="q" bType="Quality" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST"/>
+			<DA name="ctlModel" bType="Enum" type="ctlModel" fc="CF"/>
+		</DOType>
+		<DAType id="Oper_0">
+			<BDA name="ctlVal" bType="BOOLEAN"/>
+			<BDA name="origin" bType="Struct" type="Originator_0"/>
+			<BDA name="ctlNum" bType="INT8U"/>
+			<BDA name="T" bType="Timestamp"/>
+			<BDA name="Test" bType="BOOLEAN"/>
+			<BDA name="Check" bType="Check"/>
+		</DAType>
+		<DAType id="Originator_0">
+			<BDA name="orCat" bType="Enum" type="orCat"/>
+			<BDA name="orIdent" bType="Octet64"/>
+		</DAType>
+		<DAType id="AnalogValue_0">
+			<BDA name="f" bType="FLOAT32"/>
+		</DAType>
+		<DAType id="Units_0">
+			<BDA name="unit" bType="Enum" type="SIUnit"/>
+			<BDA name="multiplier" bType="Enum" type="multiplier"/>
+		</DAType>
+		<DAType id="Vector_0">
+			<BDA name="mag" bType="Struct" type="AnalogValue_0"/>
+			<BDA name="ang" bType="Struct" type="AnalogValue_0"/>
+		</DAType>
+		<EnumType id="Mod">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="ctlModel">
+			<EnumVal ord="0">status-only</EnumVal>
+			<EnumVal ord="1">direct-with-normal-security</EnumVal>
+			<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+			<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+			<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+		</EnumType>
+		<EnumType id="Beh">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="Health">
+			<EnumVal ord="1">Ok</EnumVal>
+			<EnumVal ord="2">Warning</EnumVal>
+			<EnumVal ord="3">Alarm</EnumVal>
+		</EnumType>
+		<EnumType id="dirGeneral">
+			<EnumVal ord="0">unknown</EnumVal>
+			<EnumVal ord="1">forward</EnumVal>
+			<EnumVal ord="2">backward</EnumVal>
+			<EnumVal ord="3">both</EnumVal>
+		</EnumType>
+		<EnumType id="CBOpCap">
+			<EnumVal ord="1">None</EnumVal>
+			<EnumVal ord="2">Open</EnumVal>
+			<EnumVal ord="3">Close</EnumVal>
+			<EnumVal ord="4">Close-Open</EnumVal>
+			<EnumVal ord="5">Open-Close-Open</EnumVal>
+			<EnumVal ord="6">Close-Open-Close-Open</EnumVal>
+		</EnumType>
+		<EnumType id="orCat">
+			<EnumVal ord="0">not-supported</EnumVal>
+			<EnumVal ord="1">bay-control</EnumVal>
+			<EnumVal ord="2">station-control</EnumVal>
+			<EnumVal ord="3">remote-control</EnumVal>
+			<EnumVal ord="4">automatic-bay</EnumVal>
+			<EnumVal ord="5">automatic-station</EnumVal>
+			<EnumVal ord="6">automatic-remote</EnumVal>
+			<EnumVal ord="7">maintenance</EnumVal>
+			<EnumVal ord="8">process</EnumVal>
+		</EnumType>
+		<EnumType id="SIUnit">
+			<EnumVal ord="1">none</EnumVal>
+			<EnumVal ord="2">m</EnumVal>
+			<EnumVal ord="3">kg</EnumVal>
+			<EnumVal ord="4">s</EnumVal>
+			<EnumVal ord="5">A</EnumVal>
+			<EnumVal ord="6">K</EnumVal>
+			<EnumVal ord="7">mol</EnumVal>
+			<EnumVal ord="8">cd</EnumVal>
+			<EnumVal ord="9">deg</EnumVal>
+			<EnumVal ord="10">rad</EnumVal>
+			<EnumVal ord="11">sr</EnumVal>
+			<EnumVal ord="21">Gy</EnumVal>
+			<EnumVal ord="22">q</EnumVal>
+			<EnumVal ord="23">°C</EnumVal>
+			<EnumVal ord="24">Sv</EnumVal>
+			<EnumVal ord="25">F</EnumVal>
+			<EnumVal ord="26">C</EnumVal>
+			<EnumVal ord="27">S</EnumVal>
+			<EnumVal ord="28">H</EnumVal>
+			<EnumVal ord="29">V</EnumVal>
+			<EnumVal ord="30">ohm</EnumVal>
+			<EnumVal ord="31">J</EnumVal>
+			<EnumVal ord="32">N</EnumVal>
+			<EnumVal ord="33">Hz</EnumVal>
+			<EnumVal ord="34">lx</EnumVal>
+			<EnumVal ord="35">Lm</EnumVal>
+			<EnumVal ord="36">Wb</EnumVal>
+			<EnumVal ord="37">T</EnumVal>
+			<EnumVal ord="38">W</EnumVal>
+			<EnumVal ord="39">Pa</EnumVal>
+			<EnumVal ord="41">m²</EnumVal>
+			<EnumVal ord="42">m³</EnumVal>
+			<EnumVal ord="43">m/s</EnumVal>
+			<EnumVal ord="44">m/s²</EnumVal>
+			<EnumVal ord="45">m³/s</EnumVal>
+			<EnumVal ord="46">m/m³</EnumVal>
+			<EnumVal ord="47">M</EnumVal>
+			<EnumVal ord="48">kg/m³</EnumVal>
+			<EnumVal ord="49">m²/s</EnumVal>
+			<EnumVal ord="50">W/m K</EnumVal>
+			<EnumVal ord="51">J/K</EnumVal>
+			<EnumVal ord="52">ppm</EnumVal>
+			<EnumVal ord="53">1/s</EnumVal>
+			<EnumVal ord="54">rad/s</EnumVal>
+			<EnumVal ord="61">VA</EnumVal>
+			<EnumVal ord="62">Watts</EnumVal>
+			<EnumVal ord="63">VAr</EnumVal>
+			<EnumVal ord="64">theta</EnumVal>
+			<EnumVal ord="65">Cos (theta)</EnumVal>
+			<EnumVal ord="66">Vs</EnumVal>
+			<EnumVal ord="67">V²</EnumVal>
+			<EnumVal ord="68">As</EnumVal>
+			<EnumVal ord="69">A²</EnumVal>
+			<EnumVal ord="70">A²t</EnumVal>
+			<EnumVal ord="71">VAh</EnumVal>
+			<EnumVal ord="72">Wh</EnumVal>
+			<EnumVal ord="73">VArh</EnumVal>
+			<EnumVal ord="74">V/Hz</EnumVal>
+		</EnumType>
+		<EnumType id="multiplier">
+			<EnumVal ord="-24">y</EnumVal>
+			<EnumVal ord="-21">z</EnumVal>
+			<EnumVal ord="-18">a</EnumVal>
+			<EnumVal ord="-15">f</EnumVal>
+			<EnumVal ord="-12">p</EnumVal>
+			<EnumVal ord="-9">n</EnumVal>
+			<EnumVal ord="-6">µ</EnumVal>
+			<EnumVal ord="-3">m</EnumVal>
+			<EnumVal ord="-2">c</EnumVal>
+			<EnumVal ord="-1">d</EnumVal>
+			<EnumVal ord="0"/>
+			<EnumVal ord="1">da</EnumVal>
+			<EnumVal ord="2">h</EnumVal>
+			<EnumVal ord="3">k</EnumVal>
+			<EnumVal ord="6">M</EnumVal>
+			<EnumVal ord="9">G</EnumVal>
+			<EnumVal ord="12">T</EnumVal>
+			<EnumVal ord="15">P</EnumVal>
+			<EnumVal ord="18">E</EnumVal>
+			<EnumVal ord="21">Z</EnumVal>
+			<EnumVal ord="24">Y</EnumVal>
+		</EnumType>
+		<EnumType id="seqT">
+			<EnumVal ord="0">pos-neg-zero</EnumVal>
+			<EnumVal ord="1">dir-quad-zero</EnumVal>
+		</EnumType>
+	</DataTypeTemplates>
+</SCL>

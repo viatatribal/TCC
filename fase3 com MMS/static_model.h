@@ -1,7 +1,7 @@
 /*
  * static_model.h
  *
- * automatically generated from SEL_451_editado.cid
+ * automatically generated from DMFR_8891.cid
  */
 
 #ifndef STATIC_MODEL_H_
@@ -11,40 +11,6 @@
 #include "iec61850_model.h"
 
 extern IedModel iedModel;
-extern LogicalDevice iedModel_CFG;
-extern LogicalNode   iedModel_CFG_LLN0;
-extern DataObject    iedModel_CFG_LLN0_Mod;
-extern DataAttribute iedModel_CFG_LLN0_Mod_stVal;
-extern DataAttribute iedModel_CFG_LLN0_Mod_q;
-extern DataAttribute iedModel_CFG_LLN0_Mod_t;
-extern DataAttribute iedModel_CFG_LLN0_Mod_ctlModel;
-extern DataObject    iedModel_CFG_LLN0_Beh;
-extern DataAttribute iedModel_CFG_LLN0_Beh_stVal;
-extern DataAttribute iedModel_CFG_LLN0_Beh_q;
-extern DataAttribute iedModel_CFG_LLN0_Beh_t;
-extern DataObject    iedModel_CFG_LLN0_Health;
-extern DataAttribute iedModel_CFG_LLN0_Health_stVal;
-extern DataAttribute iedModel_CFG_LLN0_Health_q;
-extern DataAttribute iedModel_CFG_LLN0_Health_t;
-extern DataObject    iedModel_CFG_LLN0_NamPlt;
-extern DataAttribute iedModel_CFG_LLN0_NamPlt_vendor;
-extern DataAttribute iedModel_CFG_LLN0_NamPlt_swRev;
-extern DataAttribute iedModel_CFG_LLN0_NamPlt_d;
-extern DataAttribute iedModel_CFG_LLN0_NamPlt_configRev;
-extern DataAttribute iedModel_CFG_LLN0_NamPlt_ldNs;
-extern LogicalNode   iedModel_CFG_LPHD1;
-extern DataObject    iedModel_CFG_LPHD1_PhyNam;
-extern DataAttribute iedModel_CFG_LPHD1_PhyNam_vendor;
-extern DataAttribute iedModel_CFG_LPHD1_PhyNam_serNum;
-extern DataAttribute iedModel_CFG_LPHD1_PhyNam_model;
-extern DataObject    iedModel_CFG_LPHD1_PhyHealth;
-extern DataAttribute iedModel_CFG_LPHD1_PhyHealth_stVal;
-extern DataAttribute iedModel_CFG_LPHD1_PhyHealth_q;
-extern DataAttribute iedModel_CFG_LPHD1_PhyHealth_t;
-extern DataObject    iedModel_CFG_LPHD1_Proxy;
-extern DataAttribute iedModel_CFG_LPHD1_Proxy_stVal;
-extern DataAttribute iedModel_CFG_LPHD1_Proxy_q;
-extern DataAttribute iedModel_CFG_LPHD1_Proxy_t;
 extern LogicalDevice iedModel_PRO;
 extern LogicalNode   iedModel_PRO_LLN0;
 extern DataObject    iedModel_PRO_LLN0_Mod;
@@ -678,40 +644,6 @@ extern DataAttribute iedModel_MET_MMXU1_A1_phsC_db;
 
 
 
-#define IEDMODEL_CFG (&iedModel_CFG)
-#define IEDMODEL_CFG_LLN0 (&iedModel_CFG_LLN0)
-#define IEDMODEL_CFG_LLN0_Mod (&iedModel_CFG_LLN0_Mod)
-#define IEDMODEL_CFG_LLN0_Mod_stVal (&iedModel_CFG_LLN0_Mod_stVal)
-#define IEDMODEL_CFG_LLN0_Mod_q (&iedModel_CFG_LLN0_Mod_q)
-#define IEDMODEL_CFG_LLN0_Mod_t (&iedModel_CFG_LLN0_Mod_t)
-#define IEDMODEL_CFG_LLN0_Mod_ctlModel (&iedModel_CFG_LLN0_Mod_ctlModel)
-#define IEDMODEL_CFG_LLN0_Beh (&iedModel_CFG_LLN0_Beh)
-#define IEDMODEL_CFG_LLN0_Beh_stVal (&iedModel_CFG_LLN0_Beh_stVal)
-#define IEDMODEL_CFG_LLN0_Beh_q (&iedModel_CFG_LLN0_Beh_q)
-#define IEDMODEL_CFG_LLN0_Beh_t (&iedModel_CFG_LLN0_Beh_t)
-#define IEDMODEL_CFG_LLN0_Health (&iedModel_CFG_LLN0_Health)
-#define IEDMODEL_CFG_LLN0_Health_stVal (&iedModel_CFG_LLN0_Health_stVal)
-#define IEDMODEL_CFG_LLN0_Health_q (&iedModel_CFG_LLN0_Health_q)
-#define IEDMODEL_CFG_LLN0_Health_t (&iedModel_CFG_LLN0_Health_t)
-#define IEDMODEL_CFG_LLN0_NamPlt (&iedModel_CFG_LLN0_NamPlt)
-#define IEDMODEL_CFG_LLN0_NamPlt_vendor (&iedModel_CFG_LLN0_NamPlt_vendor)
-#define IEDMODEL_CFG_LLN0_NamPlt_swRev (&iedModel_CFG_LLN0_NamPlt_swRev)
-#define IEDMODEL_CFG_LLN0_NamPlt_d (&iedModel_CFG_LLN0_NamPlt_d)
-#define IEDMODEL_CFG_LLN0_NamPlt_configRev (&iedModel_CFG_LLN0_NamPlt_configRev)
-#define IEDMODEL_CFG_LLN0_NamPlt_ldNs (&iedModel_CFG_LLN0_NamPlt_ldNs)
-#define IEDMODEL_CFG_LPHD1 (&iedModel_CFG_LPHD1)
-#define IEDMODEL_CFG_LPHD1_PhyNam (&iedModel_CFG_LPHD1_PhyNam)
-#define IEDMODEL_CFG_LPHD1_PhyNam_vendor (&iedModel_CFG_LPHD1_PhyNam_vendor)
-#define IEDMODEL_CFG_LPHD1_PhyNam_serNum (&iedModel_CFG_LPHD1_PhyNam_serNum)
-#define IEDMODEL_CFG_LPHD1_PhyNam_model (&iedModel_CFG_LPHD1_PhyNam_model)
-#define IEDMODEL_CFG_LPHD1_PhyHealth (&iedModel_CFG_LPHD1_PhyHealth)
-#define IEDMODEL_CFG_LPHD1_PhyHealth_stVal (&iedModel_CFG_LPHD1_PhyHealth_stVal)
-#define IEDMODEL_CFG_LPHD1_PhyHealth_q (&iedModel_CFG_LPHD1_PhyHealth_q)
-#define IEDMODEL_CFG_LPHD1_PhyHealth_t (&iedModel_CFG_LPHD1_PhyHealth_t)
-#define IEDMODEL_CFG_LPHD1_Proxy (&iedModel_CFG_LPHD1_Proxy)
-#define IEDMODEL_CFG_LPHD1_Proxy_stVal (&iedModel_CFG_LPHD1_Proxy_stVal)
-#define IEDMODEL_CFG_LPHD1_Proxy_q (&iedModel_CFG_LPHD1_Proxy_q)
-#define IEDMODEL_CFG_LPHD1_Proxy_t (&iedModel_CFG_LPHD1_Proxy_t)
 #define IEDMODEL_PRO (&iedModel_PRO)
 #define IEDMODEL_PRO_LLN0 (&iedModel_PRO_LLN0)
 #define IEDMODEL_PRO_LLN0_Mod (&iedModel_PRO_LLN0_Mod)

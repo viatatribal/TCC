@@ -102,8 +102,6 @@ int main()
     uint64_t timestamp_before = getTimeNano();
     uint64_t timestamp_initial = timestamp_before;
     uint64_t onehour = 3600UL * 1000000000UL;
-    //uint64_t fifteenminutes = 900UL * 1000000000UL;
-    //uint64_t oneminute = 60UL * 1000000000UL;
 
     // overprotection current values
     const float A = 0.052;
@@ -114,7 +112,7 @@ int main()
     uint64_t timestampdifference;
     uint64_t maxInterval = 0;
     int numAmostragem = 0;
-    uint64_t cutInterval = 3000000UL; // 3 ms
+    uint64_t cutInterval = 2000000UL; // 2 ms
 
     for (;;) {
 

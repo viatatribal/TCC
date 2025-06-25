@@ -58,7 +58,6 @@ const uint64_t sample_polltime = 208333;
 #define VOLTREAD(A)             (k * (float) analogRead((A))) - avg_volt
 #define IRMS(VOLT,TOTAL)        sqrt((VOLT)/(TOTAL))
 #define SECTONANO(A)            (A)*1000000000UL
-#define AMP                     1
 
 
 // global variables
@@ -250,7 +249,7 @@ main(int argc, char** argv)
     uint64_t timestampdifference;
     uint64_t maxInterval = 0;
     int numAmostragem = 0;
-    uint64_t cutInterval = 3000000UL; // 3 ms
+    uint64_t cutInterval = 2000000UL; // 3 ms
 
     while (running)
     {
@@ -260,7 +259,7 @@ main(int argc, char** argv)
 
             timestamp_before = timestamp_now;
             for(int i = 0; i < PHASES; i++) {
-                float v = AMP * (VOLTREAD(MY_PIN+i));
+                float v = amp[i] * (VOLTREAD(MY_PIN+i));
 
                 timestampdifference = getTimeNano() - timestamp_now;
 
