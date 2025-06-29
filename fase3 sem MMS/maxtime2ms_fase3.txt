@@ -1,3 +1,0 @@
-Opening device /dev/spidev1.1
-Numero de intervalo de amostragens maior 2 ms que 57
-Latencia máxima 5360355

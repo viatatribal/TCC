@@ -120,7 +120,7 @@ int main()
 
     	if ((timestamp_now-timestamp_before)>sample_polltime) {
 
-            timestamp_before = timestamp_now;
+            
             for(int i = 0; i < PHASES; i++) {
                 float v = AMP * (VOLTREAD(MY_PIN+i));
 
@@ -137,6 +137,7 @@ int main()
                 sample_count++;
 
             }
+            timestamp_before = timestamp_now;
 
             if (sample_count >= AMOSTRAS) {
                 for(int i = 0; i < 3; i++) {
@@ -171,7 +172,7 @@ int main()
         }
     }
 
-    printf("Numero de intervalo de amostragens maior que %d\n", numAmostragem);
+    printf("Numero de intervalo de amostragens maior que 2 ms: %d\n", numAmostragem);
     printf("Latencia máxima %" PRIu64 "\n", maxInterval);
 
     return 0;

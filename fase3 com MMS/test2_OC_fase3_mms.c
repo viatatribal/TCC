@@ -172,9 +172,9 @@ void OC_protection(float A, float B, float p, int i,
 
         uint64_t t_n = SECTONANO(OC_function(A,B,p,Irms[i]/Ip));
 
-        if (t_n < t_limit[i]) {
-            t_limit[i] = t_n;
-        }
+        //if (t_n < t_limit[i]) {
+        t_limit[i] = t_n;
+            //}
 
         if ((timestamp_now_oc - t_0[i]) >= t_limit[i]) {
             is51[i] = true;
@@ -389,6 +389,7 @@ main(int argc, char** argv)
                     IedServer_updateBooleanAttributeValue(iedServer, IEDMODEL_PRO_PTOC1_Op_general, true);
                     IedServer_unlockDataModel(iedServer);
                     is51[0] = false;
+                    amp[0] = 1;
                     isPickUpEvent[0] = false;
 
                     reset_everything();
@@ -402,7 +403,6 @@ main(int argc, char** argv)
                     IedServer_updateBooleanAttributeValue(iedServer, IEDMODEL_PRO_PIOC1_Op_general, true);
                     IedServer_unlockDataModel(iedServer);
                     is50[0] = false;
-                    amp[0] = 1;
                     isPickUpEvent[0] = false;
 
                     reset_everything();

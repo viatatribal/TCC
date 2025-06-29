@@ -235,6 +235,7 @@ for i in range(len(dt1)):
            minstampIrms1 = sum
        elif sum > maxstampIrms1:
            maxstampIrms1 = sum
+       sum = 0
 timestampIrms1.append(sum)
 mediaIrms1 = sumTotalIrms1 / (mediaIrms1 + 1)
 
@@ -249,6 +250,7 @@ for i in range(len(dt2)):
             minstampIrms2 = sum
         elif sum > maxstampIrms2:
             maxstampIrms2 = sum
+        sum = 0
 timestampIrms2.append(sum)
 mediaIrms2 = sumTotalIrms2 / (mediaIrms2 + 1)
 
@@ -263,6 +265,7 @@ for i in range(len(dt3)):
             minstampIrms3 = sum
         elif sum > maxstampIrms3:
             maxstampIrms3 = sum
+        sum = 0
 timestampIrms3.append(sum)
 mediaIrms3 = sumTotalIrms3 / (mediaIrms3 + 1)
 
@@ -290,7 +293,7 @@ plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total/1000:.2f} ms")
 
 # Estética
-plt.title("Intervalo por Irms fase A calculado")
+plt.title("Intervalo por Irms fase A")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
 plt.tight_layout()
@@ -318,7 +321,7 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
-plt.title("Intervalo por Irms fase A calculado B")
+plt.title("Intervalo por Irms fase B")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
 plt.tight_layout()
@@ -346,7 +349,7 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
-plt.title("Intervalo por Irms fase C calculado")
+plt.title("Intervalo por Irms fase C")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
 plt.tight_layout()

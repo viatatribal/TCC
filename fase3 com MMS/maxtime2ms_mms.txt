@@ -1,0 +1,4 @@
+Opening device /dev/spidev1.1
+Using libIEC61850 version 1.5.1
+Numero de intervalo de amostragens maior que 2 ms: 54
+Latencia máxima 4786729

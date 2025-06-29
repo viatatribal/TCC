@@ -80,7 +80,7 @@ int main()
     uint64_t timestampdifference;
     uint64_t maxInterval = 0;
     int numAmostragem = 0;
-    uint64_t cutInterval = 3000000UL; // 3 ms
+    uint64_t cutInterval = 2000000UL; // 2 ms
 
     for (;;) {
 
@@ -88,8 +88,6 @@ int main()
 
     	if ((timestampnow-timestampbefore)>samplepolltime) {
 
-            //timestamp[tempo_count++] = timestampnow - timestampbefore;
-            timestampbefore = timestampnow;
             float v = AMP * (VOLTREAD(MY_PIN));
             timestampdifference = getTimeNano() - timestampnow;
 
@@ -99,6 +97,7 @@ int main()
                     maxInterval = timestampdifference;
                 }
             }
+            timestampbefore = timestampnow;
 
     	    sumVolt += v*v;
             amostra_count++;
@@ -180,7 +179,7 @@ exit_loop:
 	printf("Trip 51! Total cycles: %d\n", cyclesInsideOC);
     }
 */
-    printf("Numero de intervalo de amostragens maior que %d\n", numAmostragem);
+    printf("Numero de intervalo de amostragens maior que 2 ms: %d\n", numAmostragem);
     printf("Latencia máxima %" PRIu64 "\n", maxInterval);
 
     return 0;

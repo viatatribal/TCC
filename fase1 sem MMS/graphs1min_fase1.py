@@ -92,6 +92,7 @@ for i in range(len(dt1)):
            minstampIrms1 = sum
        elif sum > maxstampIrms1:
            maxstampIrms1 = sum
+       sum = 0
 timestampIrms1.append(sum)
 mediaIrms1 = sumTotalIrms1 / (mediaIrms1 + 1)
 
@@ -114,12 +115,12 @@ mediana = box['medians'][0].get_ydata()[0]
 plt.scatter(1, minimo, color='blue', label=f"Mínimo: {maximo/1000:.2f} ms")
 plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana/1000:.2f} ms")
 plt.scatter(1, maximo, color='red', label=f"Máximo: {maximo/1000:.2f} ms")
-plt.scatter(1, media, color='purple', label=f"Média: {media/1000:.2f} ms", marker='D')
+plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} ms", marker='D')
 plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total/1000:.2f} ms")
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total/1000:.2f} ms")
 
 # Estética
-plt.title("Intervalo por Irms 1 minuto fase A")
+plt.title("Intervalo por Irms 1 minuto")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
 plt.tight_layout()
@@ -154,7 +155,7 @@ plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total} A")
 
 # Estética
-plt.title("Irms 1 minuto fase A")
+plt.title("Irms 1 minuto")
 plt.ylabel("Irms")
 plt.legend(loc='upper right')
 plt.tight_layout()
@@ -186,13 +187,13 @@ plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} A")
 
 # Estética
-plt.title("Irms 2 casas decimais 1 minuto fase A")
+plt.title("Irms 2 casas decimais 1 minuto")
 plt.ylabel("Irms")
 plt.legend(loc='upper right')
 plt.show()
 
-print(f'Máximo tempo no quadrado para 1 minuto fase A: {maximo_quadradodt1}')
-print(f'Porcentagem de outlier para 1 minuto fase A: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
+print(f'Máximo tempo no quadrado para 1 minuto: {maximo_quadradodt1}')
+print(f'Porcentagem de outlier para 1 minuto: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
 print(f'Total de intervalos fora do quadrado: {len(outlierdt1)}')
 print(f'Total de intervalos dentor do quadrado: {len(nooutliert1)}\n\n')
 

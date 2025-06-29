@@ -236,6 +236,7 @@ for i in range(len(dt1)):
            minstampIrms1 = sum
        elif sum > maxstampIrms1:
            maxstampIrms1 = sum
+       sum = 0
 timestampIrms1.append(sum)
 mediaIrms1 = sumTotalIrms1 / (mediaIrms1 + 1)
 
@@ -250,6 +251,7 @@ for i in range(len(dt2)):
             minstampIrms2 = sum
         elif sum > maxstampIrms2:
             maxstampIrms2 = sum
+        sum = 0
 timestampIrms2.append(sum)
 mediaIrms2 = sumTotalIrms2 / (mediaIrms2 + 1)
 
@@ -264,6 +266,7 @@ for i in range(len(dt3)):
             minstampIrms3 = sum
         elif sum > maxstampIrms3:
             maxstampIrms3 = sum
+        sum = 0
 timestampIrms3.append(sum)
 mediaIrms3 = sumTotalIrms3 / (mediaIrms3 + 1)
 

@@ -93,6 +93,7 @@ for i in range(len(dt1)):
            minstampIrms1 = sum
        elif sum > maxstampIrms1:
            maxstampIrms1 = sum
+       sum = 0
 timestampIrms1.append(sum)
 mediaIrms1 = sumTotalIrms1 / (mediaIrms1 + 1)
 
@@ -194,8 +195,8 @@ plt.legend(loc='upper right')
 plt.show()
 
 
-print(f'Máximo tempo no quadrado para 15 minutos fase A: {maximo_quadradodt1}')
-print(f'Porcentagem de outlier para 15 minuto fase A: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
+print(f'Máximo tempo no quadrado para 15 minutos: {maximo_quadradodt1}')
+print(f'Porcentagem de outlier para 15 minuto: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
 print(f'Total de intervalos fora do quadrado: {len(outlierdt1)}')
 print(f'Total de intervalos dentor do quadrado: {len(nooutliert1)}\n\n')
 
