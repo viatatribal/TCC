@@ -59,6 +59,8 @@ int main()
 
     uint64_t times[3] = {0,0,0};
     uint64_t timestamp_difference = 0;
+    uint64_t timestamp_extra[3] = {timestamp_before,timestamp_before,timestamp_before};
+    uint64_t timestamp_temp[3] = {0,0,0};
 
 
     for (;;) {
@@ -69,12 +71,14 @@ int main()
 
 
             for(int i = 0; i < PHASES; i++) {
+		timestamp_temp[i] = getTimeNano();
                 float v = AMP * (VOLTREAD(MY_PIN+i));
-                timestamp_difference =  getTimeNano() - timestamp_before;
+                timestamp_difference =  timestamp_temp[i] - timestamp_extra[i];
                 timestamp[i][time_count] = timestamp_difference;
            	    sum_volt[i] += v*v;
+                timestamp_extra[i] = timestamp_temp[i];
             }
-            timestamp_before = timestamp_now;
+            timestamp_before = timestamp_temp[0];
             time_count++;
             sample_count++;
 
@@ -104,7 +108,7 @@ int main()
         return 1;
     }
 
-    fprintf(arquivo, "Irms1,Irms2,Irms3,\n");
+    fprintf(arquivo, "Irms1,Irms2,Irms3\n");
     for (int i = 0; i < minutes_irms; i++) {
         for (int j = 0; j < PHASES; j++) {
             fprintf(arquivo,"%f,", Irms[j][i]);
@@ -120,7 +124,7 @@ int main()
         return 1;
     }
 
-    fprintf(arquivo, "timestamp1,timestamp2,timestamp3,\n");
+    fprintf(arquivo, "timestamp1,timestamp2,timestamp3\n");
     for (int i = 0; i < minutes_timestamp; i++) {
         for (int j = 0; j < PHASES; j++) {
             fprintf(arquivo,"%" PRIu64 ",", timestamp[j][i]);

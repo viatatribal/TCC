@@ -31,7 +31,9 @@ plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} us", marker='D
 plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} us")
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} us")
 
+
 # Estética
+plt.ylim(minimo_quadradodt1-.2,maximo_quadradodt1)
 plt.title("Intervalo por amostras 15 minutos fase A")
 plt.ylabel("Intervalo por amostras")
 plt.legend(loc='upper right')
@@ -52,7 +54,7 @@ maximo_quadradodt2 = box['caps'][1].get_ydata()[0]
 mediana = box['medians'][0].get_ydata()[0]
 
 # Adicionar marcadores no gráfico
-plt.scatter(1, minimo_quadradodt1, color='blue', label=f"Mínimo: {minimo_quadradodt1:.2f} us")
+plt.scatter(1, minimo_quadradodt2, color='blue', label=f"Mínimo: {minimo_quadradodt2:.2f} us")
 plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} us")
 plt.scatter(1, maximo_quadradodt2, color='red', label=f"Máximo: {maximo_quadradodt2:.2f} us")
 plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} us", marker='D')
@@ -61,12 +63,11 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
+plt.ylim(minimo_quadradodt2-.2,maximo_quadradodt2)
 plt.title("Intervalo por amostras 15 minutos fase B")
 plt.ylabel("Intervalo por amostras")
 plt.legend(loc='upper right')
 plt.tight_layout()
-#plt.show()
-
 
 media = dt3.mean()
 maximo_total = dt3.max()
@@ -91,121 +92,22 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
+plt.ylim(minimo_quadradodt3-.2,maximo_quadradodt3)
 plt.title("Intervalo por amostras 15 minutos fase C")
 plt.ylabel("Intervalo por amostras")
 plt.legend(loc='upper right')
 plt.tight_layout()
 plt.show()
 
-
 outlierdt1 = [t for t in dt1 if t > maximo_quadradodt1 or t < minimo_quadradodt1]
 nooutliert1 = [t for t in dt1 if t <= maximo_quadradodt1 and t >= minimo_quadradodt1]
-
-minimo_total = 9999
-maximo_total = 0
-for t in nooutliert1:
-    if t > maximo_total:
-        maximo_total = t
-    if t < minimo_total:
-        minimo_total = t
-
-plt.figure(figsize=(12, 6))
-
-# Criar boxplot com média
-plt.subplot(1, 3, 1)  # 1 linha, 3 colunas, gráfico 1
-box = plt.boxplot(nooutliert1, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo_quadradodt1 = box['caps'][0].get_ydata()[0]
-maximo_quadradodt1 = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo_quadradodt1, color='blue', label=f"Mínimo: {minimo_quadradodt1:.2f} us")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} us")
-plt.scatter(1, maximo_quadradodt1, color='red', label=f"Máximo: {maximo_quadradodt1:.2f} us")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} us", marker='D')
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} us")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} us")
-
-
-# Estética
-plt.title("Intervalo por amostras 1 minuto fase A")
-plt.ylabel("Intervalo por amostras")
-plt.legend(loc='upper right')
-plt.tight_layout()
 
 
 outlierdt2 = [t for t in dt2 if t > maximo_quadradodt2 or t < minimo_quadradodt2]
 nooutliert2 = [t for t in dt2 if t <= maximo_quadradodt2 and t >= minimo_quadradodt2]
 
-minimo_total = 9999
-maximo_total = 0
-for t in nooutliert2:
-    if t > maximo_total:
-        maximo_total = t
-    if t < minimo_total:
-        minimo_total = t
-
-# Criar boxplot com média
-plt.subplot(1, 3, 2)  # 1 linha, 3 colunas, gráfico 2
-box = plt.boxplot(nooutliert2, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo_quadradodt2 = box['caps'][0].get_ydata()[0]
-maximo_quadradodt2 = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo_quadradodt1, color='blue', label=f"Mínimo: {minimo_quadradodt1:.2f} us")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} us")
-plt.scatter(1, maximo_quadradodt2, color='red', label=f"Máximo: {maximo_quadradodt2:.2f} us")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} us", marker='D')
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} us")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} us")
-
-
-# Estética
-plt.title("Intervalo por amostras 1 minuto fase B")
-plt.ylabel("Intervalo por amostras")
-plt.legend(loc='upper right')
-plt.tight_layout()
-
 outlierdt3 = [t for t in dt3 if t > maximo_quadradodt3 or t < minimo_quadradodt3]
 nooutliert3 = [t for t in dt3 if t <= maximo_quadradodt3 and t >= minimo_quadradodt3]
-
-minimo_total = 9999
-maximo_total = 0
-for t in nooutliert3:
-    if t > maximo_total:
-        maximo_total = t
-    if t < minimo_total:
-        minimo_total = t
-
-# Criar boxplot com média
-plt.subplot(1, 3, 3)  # 1 linha, 3 colunas, gráfico 3
-box = plt.boxplot(nooutliert3, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo_quadradodt3 = box['caps'][0].get_ydata()[0]
-maximo_quadradodt3 = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo_quadradodt3, color='blue', label=f"Mínimo: {minimo_quadradodt3:.2f} us")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} us")
-plt.scatter(1, maximo_quadradodt3, color='red', label=f"Máximo: {maximo_quadradodt3:.2f} us")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} us", marker='D')
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} us")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} us")
-
-
-# Estética
-plt.title("Intervalo por amostras 1 minuto fase C")
-plt.ylabel("Intervalo por amostras")
-plt.legend(loc='upper right')
-plt.tight_layout()
-plt.show()
 
 # Soma dos timestamp por Irms calcualdo
 amostra = 80
@@ -286,7 +188,7 @@ maximo = box['caps'][1].get_ydata()[0]
 mediana = box['medians'][0].get_ydata()[0]
 
 # Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo: {maximo/1000:.2f} ms")
+plt.scatter(1, minimo, color='blue', label=f"Mínimo: {minimo/1000:.2f} ms")
 plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana/1000:.2f} ms")
 plt.scatter(1, maximo, color='red', label=f"Máximo: {maximo/1000:.2f} ms")
 plt.scatter(1, media, color='purple', label=f"Média: {media/1000:.2f} ms", marker='D')
@@ -294,6 +196,7 @@ plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total
 plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total/1000:.2f} ms")
 
 # Estética
+plt.ylim(minimo-.2,maximo)
 plt.title("Intervalo por Irms 15 minutos fase A")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
@@ -313,7 +216,7 @@ maximo = box['caps'][1].get_ydata()[0]
 mediana = box['medians'][0].get_ydata()[0]
 
 # Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo: {maximo/1000:.2f} ms")
+plt.scatter(1, minimo, color='blue', label=f"Mínimo: {minimo/1000:.2f} ms")
 plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana/1000:.2f} ms")
 plt.scatter(1, maximo, color='red', label=f"Máximo: {maximo/1000:.2f} ms")
 plt.scatter(1, media, color='purple', label=f"Média: {media/1000:.2f} ms", marker='D')
@@ -322,6 +225,7 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
+plt.ylim(minimo-.2,maximo)
 plt.title("Intervalo por Irms 15 minutos fase B")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
@@ -341,7 +245,7 @@ maximo = box['caps'][1].get_ydata()[0]
 mediana = box['medians'][0].get_ydata()[0]
 
 # Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo: {maximo/1000:.2f} ms")
+plt.scatter(1, minimo, color='blue', label=f"Mínimo: {minimo/1000:.2f} ms")
 plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana/1000:.2f} ms")
 plt.scatter(1, maximo, color='red', label=f"Máximo: {maximo/1000:.2f} ms")
 plt.scatter(1, media, color='purple', label=f"Média: {media/1000:.2f} ms", marker='D')
@@ -350,6 +254,7 @@ plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_tota
 
 
 # Estética
+plt.ylim(minimo-.2,maximo)
 plt.title("Intervalo por Irms 15 minutos fase C")
 plt.ylabel("Intervalo por Irms")
 plt.legend(loc='upper right')
@@ -449,109 +354,22 @@ plt.legend(loc='upper right')
 plt.tight_layout()
 plt.show()
 
-di1 = df["Irms1"].round(2)
-di2 = df["Irms2"].round(2)
-di3 = df["Irms3"].round(2)
 
-media = di1.mean()
-maximo_total = di1.max()
-minimo_total = di1.min()
-
-plt.figure(figsize=(12, 6))
-
-# Criar boxplot com média
-plt.subplot(1, 3, 1)  # 1 linha, 3 colunas, gráfico 1
-box = plt.boxplot(di1, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo = box['caps'][0].get_ydata()[0]
-maximo = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo quadrado: {minimo:.2f} A")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} A")
-plt.scatter(1, maximo, color='red', label=f"Máximo quadrado: {maximo:.2f} A")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} A")
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} A")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} A")
-
-# Estética
-plt.title("Irms 2 casas decimais 15 minutos fase A")
-plt.ylabel("Irms")
-plt.legend(loc='upper right')
-
-
-media = di2.mean()
-maximo_total = di2.max()
-minimo_total = di2.min()
-
-# Criar boxplot com média
-plt.subplot(1, 3, 2)  # 1 linha, 3 colunas, gráfico 2
-box = plt.boxplot(di2, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo = box['caps'][0].get_ydata()[0]
-maximo = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo quadrado: {minimo:.2f} A")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} A")
-plt.scatter(1, maximo, color='red', label=f"Máximo quadrado: {maximo:.2f} A")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} A")
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} A")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} A")
-
-# Estética
-plt.title("Irms 2 casas decimais 15 minutos fase B")
-plt.ylabel("Irms")
-plt.legend(loc='upper right')
-plt.tight_layout()
-#plt.show()
-
-media = di3.mean()
-maximo_total = di3.max()
-minimo_total = di3.min()
-
-# Criar boxplot com média
-plt.subplot(1, 3, 3)  # 1 linha, 3 colunas, gráfico 3
-box = plt.boxplot(di3, patch_artist=True, widths=0.5, showmeans=True)
-
-# Pegar elementos do boxplot
-minimo = box['caps'][0].get_ydata()[0]
-maximo = box['caps'][1].get_ydata()[0]
-mediana = box['medians'][0].get_ydata()[0]
-
-# Adicionar marcadores no gráfico
-plt.scatter(1, minimo, color='blue', label=f"Mínimo quadrado: {minimo:.2f} A")
-plt.scatter(1, mediana, color='green', label=f"Mediana: {mediana:.2f} A")
-plt.scatter(1, maximo, color='red', label=f"Máximo quadrado: {maximo:.2f} A")
-plt.scatter(1, media, color='purple', label=f"Média: {media:.2f} A")
-plt.scatter(1, maximo_total, color='black', label=f"Máximo total: {maximo_total:.2f} A")
-plt.scatter(1, minimo_total, color='yellow', label=f"Mínimo total: {minimo_total:.2f} A")
-
-# Estética
-plt.title("Irms 2 casas decimais 15 minutos fase C")
-plt.ylabel("Irms")
-plt.legend(loc='upper right')
-plt.tight_layout()
-plt.show()
-
-print(f'Máximo tempo no quadrado para 1 minuto fase A: {maximo_quadradodt1}')
-print(f'Porcentagem de outlier para 1 minuto fase A: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
+print(f'Máximo tempo no quadrado para 15 minutos fase A: {maximo_quadradodt1}')
+print(f'Porcentagem de outlier para 15 minutos fase A: {(len(outlierdt1) / len(dt1)) * 100:.2f}%')
 print(f'Total de intervalos fora do quadrado fase A: {len(outlierdt1)}')
 print(f'Total de intervalos dentor do quadrado fase A: {len(nooutliert1)}\n\n')
 
-print(f'Máximo tempo no quadrado para 1 minuto fase B: {maximo_quadradodt2}')
-print(f'Porcentagem de outlier para 1 minuto fase B: {(len(outlierdt2) / len(dt1)) * 100:.2f}%')
+print(f'Máximo tempo no quadrado para 15 minutos fase B: {maximo_quadradodt2}')
+print(f'Porcentagem de outlier para 15 minutos fase B: {(len(outlierdt2) / len(dt1)) * 100:.2f}%')
 print(f'Total de intervalos fora do quadrado fase B: {len(outlierdt2)}')
 print(f'Total de intervalos dentor do quadrado fase B: {len(nooutliert2)}\n\n')
 
-print(f'Máximo tempo no quadrado para 1 minuto fase C: {maximo_quadradodt3}')
-print(f'Porcentagem de outlier para 1 minuto fase C: {(len(outlierdt3) / len(dt1)) * 100:.2f}%\n\n')
+print(f'Máximo tempo no quadrado para 15 minutos fase C: {maximo_quadradodt3}')
+print(f'Porcentagem de outlier para 15 minutos fase C: {(len(outlierdt3) / len(dt1)) * 100:.2f}%')
 print(f'Total de intervalos fora do quadrado fase C: {len(outlierdt3)}')
 print(f'Total de intervalos dentor do quadrado fase C: {len(nooutliert3)}\n\n')
+
 
 ciclo = 60 * 60 * 15
 total = len(di1)

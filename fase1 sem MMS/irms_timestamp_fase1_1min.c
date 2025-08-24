@@ -59,6 +59,7 @@ int main()
 
     uint64_t times[3] = {0,0,0};
     uint64_t timestamp_difference = 0;
+    uint64_t timestamp_temp = 0;
 
 
     for (;;) {
@@ -70,12 +71,13 @@ int main()
 
             for(int i = 0; i < PHASES; i++) {
                 float v = AMP * (VOLTREAD(MY_PIN+i));
-                timestamp_difference =  getTimeNano() - timestamp_before;
+                timestamp_temp = getTimeNano();
+                timestamp_difference =  timestamp_temp - timestamp_before;
                 timestamp[i][time_count] = timestamp_difference;
            	    sum_volt[i] += v*v;
             }
             time_count++;
-            timestamp_before = timestamp_now;
+            timestamp_before = timestamp_temp;
             sample_count++;
 
             if (sample_count >= AMOSTRAS) {

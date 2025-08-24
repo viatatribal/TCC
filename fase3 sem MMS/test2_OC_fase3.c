@@ -92,9 +92,7 @@ void OC_protection(float A, float B, float p, int i)
 
         uint64_t t_n = SECTONANO(OC_function(A,B,p,Irms[i]/Ip));
 
-        //if (t_n < t_limit[i]) {
         t_limit[i] = t_n;
-            //}
 
         if ((timestamp_now_oc - t_0[i]) >= t_limit[i]) {
             is51[i] = TRUE;

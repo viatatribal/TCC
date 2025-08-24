@@ -53,24 +53,9 @@ float OC_function(float A, float B, float p, float M)
     return (A / (pow(M, p) - 1)) + B;
 }
 
-uint64_t
-getTimeNano()
-{
-    struct timespec now;
-
-    clock_gettime(CLOCK_MONOTONIC, &now);
-
-    uint64_t nsTime = now.tv_sec * 1000000000UL;
-    nsTime += now.tv_nsec;
-
-    return nsTime;
-}
-
 void OC_protection(float A, float B, float p, int i)
 {
     if (isPickUpEvent[i] && Ip > Irms[i]) {
-        clock_gettime(CLOCK_REALTIME, &dropout_time[i]);
-        Irms_dropout[i] = Irms[i];
         isPickUpEvent[i] = FALSE;
         return;
     }
@@ -81,22 +66,16 @@ void OC_protection(float A, float B, float p, int i)
     }
 
     if (!isPickUpEvent[i] && Irms[i] >= Ip) {
-        Irms_pickup[i] = Irms[i];
-        clock_gettime(CLOCK_REALTIME, &pickup_event_time[i]);
-        t_limit[i] = SECTONANO(OC_function(A,B,p,Irms[i]/Ip));
+        t_limit[i] = OC_function(A,B,p,Irms[i]/Ip);
         t_0[i] = getTimeNano();
         isPickUpEvent[i] = TRUE;
     }
 
     if (isPickUpEvent[i]) {
-
         uint64_t timestamp_now_oc = getTimeNano();
+        uint64_t t_n = OC_function(A,B,p,Irms[i]/Ip);
 
-        uint64_t t_n = SECTONANO(OC_function(A,B,p,Irms[i]/Ip));
-
-        if (t_n < t_limit[i]) {
-            t_limit[i] = t_n;
-        }
+        t_limit[i] = t_n;
 
         if ((timestamp_now_oc - t_0[i]) >= t_limit[i]) {
             is51[i] = TRUE;
@@ -163,15 +142,16 @@ int main()
 
             timestamp_before = timestamp_now;
             for(int i = 0; i < PHASES; i++) {
-                float v = amp[i] * (VOLTREAD(MY_PIN+i));
+                float v = k * (float)analogRead(MY_PIN);
            	    sum_volt[i] += v*v;
             }
-            sample_count++;
 
             if (sample_count >= AMOSTRAS) {
                 for(int i = 0; i < PHASES; i++) {
-              		Irms[i] = IRMS(sum_volt[i], AMOSTRAS);
+              		Irms[i] = sqrt(sum_volt[i]/AMOSTRAS);
                     sum_volt[i] = 0;
+                }
+            }
 
                     OC_protection(A, B, p, i);
 

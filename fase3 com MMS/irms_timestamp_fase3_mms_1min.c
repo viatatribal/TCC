@@ -162,6 +162,8 @@ main(int argc, char** argv)
 
     uint64_t times[3] = {0,0,0};
     uint64_t timestamp_difference = 0;
+    uint64_t timestamp_temp[3] = {0,0,0};
+    uint64_t timestamp_extra[3] = {0,0,0};
 
     while (running)
     {
@@ -170,12 +172,14 @@ main(int argc, char** argv)
        	if ((timestamp_now-timestamp_before)>sample_polltime) {
 
             for(int i = 0; i < PHASES; i++) {
+                timestamp_temp[i] = getTimeNano();
                 float v = AMP * (VOLTREAD(MY_PIN+i));
-                timestamp_difference =  getTimeNano() - timestamp_before;
+                timestamp_difference =  timestamp_temp[i] - timestamp_extra[i];
                 timestamp[i][time_count] = timestamp_difference;
            	    sum_volt[i] += v*v;
+                timestamp_extra[i] = timestamp_temp[i];
             }
-            timestamp_before = timestamp_now;
+            timestamp_before = timestamp_extra[0];
             time_count++;
             sample_count++;
 
